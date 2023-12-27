@@ -1,11 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 
+import { API_URL } from "@/constants";
+
 export const useTimeLineData = (ticker) => {
   const { data, isLoading } = useQuery({
     queryKey: [ticker],
     queryFn: async () => {
       try {
-        const url = new URL(process.env.NEXT_PUBLIC_API + "/v2/histohour");
+        const url = new URL(API_URL + "/v2/histohour");
         url.searchParams.append("fsym", ticker);
         url.searchParams.append("tsym", "USD");
         url.searchParams.append("limit", "24");

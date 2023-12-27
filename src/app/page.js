@@ -1,3 +1,4 @@
+import { API_URL } from "@/constants";
 import { Card } from "@/ui/components/Card";
 
 // API does not provide the name for the crypto. So mapping names here, in order to save on API request to not get throttled
@@ -15,7 +16,7 @@ const symbols = {
 
 export default async function Home() {
   // creating the URL to fetch the symbols
-  const url = new URL(process.env.NEXT_PUBLIC_API + "/pricemultifull");
+  const url = new URL(API_URL + "/pricemultifull");
   // using the symbols object to get the keys and join them for the searchParam
   url.searchParams.append("fsyms", Object.keys(symbols).join(","));
   url.searchParams.append("tsyms", "USD");
