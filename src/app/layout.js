@@ -1,4 +1,5 @@
-import '@/ui'
+import "@/ui";
+import { ReactQueryProvider } from "@/libs/ReactQuery";
 
 export const metadata = {
   title: "Crypto Dashboard",
@@ -8,7 +9,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ReactQueryProvider>{children}</ReactQueryProvider>
+      </body>
     </html>
   );
 }
