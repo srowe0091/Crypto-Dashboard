@@ -39,6 +39,7 @@ export default async function Home() {
       percentDayChange: USD.CHANGEPCTDAY,
     }));
 
+    // counting how many cryptos are doing good and bad.
     const { positive, negative } = _data.reduce(
       (acc, curr) => {
         const _acc = structuredClone(acc);
@@ -52,15 +53,16 @@ export default async function Home() {
       { positive: 0, negative: 0 }
     );
 
+    // style the background based on which majority has the most counts
     const backgroundStyle =
       positive > negative ? "bg-positive-radial" : "bg-negative-radial";
 
     return (
       <main
-        className={`min-h-screen justify-center align-center p-16 m-auto ${backgroundStyle}`}
+        className={`min-h-screen justify-center align-center p-4 m-auto ${backgroundStyle} sm:p-16`}
       >
         <p className="text-3xl font-bold text-center mb-10">Crypto Dashboard</p>
-        <div className="grid gap-1 grid-cols-[repeat(auto-fill,minmax(370px,1fr))]">
+        <div className="grid gap-1 md:grid-cols-[repeat(auto-fill,minmax(370px,1fr))]">
           {_data.map((cryptoData) => (
             <Card key={cryptoData.ticker} data={cryptoData} />
           ))}
