@@ -1,18 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       fontFamily: {
         sans: ["Nunito Sans"],
       },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "positive-radial": "radial-gradient(circle, #0b2f19 0%, #04180c 100%)",
+        "negative-radial": "radial-gradient(circle, #2b0606 0%, #0c0202 100%)",
       },
     },
   },
