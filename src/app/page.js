@@ -62,7 +62,7 @@ export default async function Home() {
         className={`min-h-screen justify-center align-center p-4 m-auto ${backgroundStyle} sm:p-16`}
       >
         <p className="text-3xl font-bold text-center mb-10">Crypto Dashboard</p>
-        <div className="grid gap-1 md:grid-cols-[repeat(auto-fill,minmax(370px,1fr))]">
+        <div className="grid gap-4 md:grid-cols-[repeat(auto-fill,minmax(350px,1fr))]">
           {_data.map((cryptoData) => (
             <Card key={cryptoData.ticker} data={cryptoData} />
           ))}

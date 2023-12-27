@@ -18,7 +18,7 @@ import { useTimeLineData } from "./useTimeLineData";
 function CustomTooltip({ payload, label, active }) {
   if (active) {
     return (
-      <div className="bg-black px-2 py-1 rounded-lg">
+      <div className="bg-black/70 px-2 py-1 rounded-lg">
         <p className="text-small font-bold">
           {label} : {formatCurrency(payload[0].value)}
         </p>
@@ -58,7 +58,7 @@ export const TimeLineChart = ({ ticker }) => {
       <LineChart data={data}>
         <XAxis
           dataKey={(data) => timeConversion(getHours(fromUnixTime(data.time)))}
-          minTickGap={70}
+          minTickGap={60}
           tickCount={4}
           tickLine={false}
           axisLine={false}

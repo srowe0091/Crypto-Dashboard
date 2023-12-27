@@ -9,15 +9,13 @@ export const Card = ({ data }) => {
 
   return (
     <div
-      className={`w-full h-60 flex flex-col grow-0 shrink-0 p-2 bg-gradient-to-t ${statusBackground} to-neutral-900`}
+      className={`w-full h-60 flex flex-col grow-0 shrink-0 px-4 py-2 bg-gradient-to-t ${statusBackground} to-neutral-900 rounded-xl border border-neutral-700 drop-shadow-xl`}
     >
-      <p className="text-lg font-bold text-center">{data.name}</p>
+      <p className="text-lg font-bold text-center mb-2">{data.name}</p>
       <div className="flex justify-between">
-        <span>
-          <b>
-            {data.ticker}/{data.toSymbol}
-          </b>
-        </span>
+        <p className="font-bold">
+          {data.ticker}/{data.toSymbol}
+        </p>
 
         <span className="flex gap-2">
           <p className="font-bold">{formatPercent(data.percentDayChange)}</p>
@@ -27,7 +25,7 @@ export const Card = ({ data }) => {
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <p className="text-4xl font-bold">
+        <p className="text-3xl font-bold">
           {formatCurrency(data.currentPrice)}
         </p>
 
