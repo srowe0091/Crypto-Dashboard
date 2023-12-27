@@ -14,7 +14,7 @@ Then you'll need to install the dependencies with `npm`
 
 `npm i`
 
-Once complete, you can start the development application with
+Once complete, you can start the development server with
 
 `npm run dev`
 
